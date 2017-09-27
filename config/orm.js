@@ -58,12 +58,12 @@ var orm = {
   },
 
   updateOne: function(table, objColVals, condition, cb) { 
-    var queryString = "UPDATE " + table;
+   var queryString = "UPDATE " + table;
 
     queryString += " SET ";
-    queryString += objToSql(objColVals);
+    queryString += "`devoured`=" + condition
       queryString += " WHERE ";
-      queryString += condition;
+      queryString += "`id`=" + objColVals;
   
       console.log(queryString);
 

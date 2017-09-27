@@ -24,8 +24,8 @@ router.post("/create", function(req, res) {
 	});
 });
 
-router.put("/burgers/update", function(req, res) {
-  burger.update(req.body.burger_id, function(result) {
+router.put("/:id", function(req, res) {
+  burger.updateOne(req.params.id, true, function(result) {
     // wrapper for orm.js that using MySQL update callback will return a log to console,
     // render back to index with handle
     console.log(result);
